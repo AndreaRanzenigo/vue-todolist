@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-todolist</title>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- Fontawesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- Vuejs -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- Main style -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <div id="app">
+        <div class="container">
+            <h1>Todolist</h1>
+
+            <form>
+                <input type="text" placeholder="Inserisci il testo">
+                <button>Aggiungi</button>
+                <!-- <button>Cancella tutto</button> -->
+            </form>
+
+            <div class="todolist">
+                <ul>
+                    <!-- <li>Comprare le mele <i class="fas fa-times"></i></li>
+                    <li>Comprare la pasta <i class="fas fa-times"></i></li>
+                    <li>Comprare il pane <i class="fas fa-times"></i></li> -->
+                    <li v-for="(items, index) in listItems">{{ items }}<i @click='close' class="fas fa-times"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
