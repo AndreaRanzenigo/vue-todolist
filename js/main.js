@@ -6,15 +6,27 @@ const app = new Vue({
             'Comprare la pasta',
             'Comprare le mele',
             'Comprare il pane',
-
         ],
+        newTodo: '',
         
-
     },
     methods: {
-        close() {
-            console.log('OK!!!');
+        close(index) {
+            this.listItems.splice(index, 1);
+            if (this.listItems == "") {
+                alert('Lista vuota');
+            }
         },
-        
+        addItems() {
+            if (this.newTodo.trim() !== "") {
+                
+                this.listItems.push(this.newTodo);
+                this.newTodo = '';
+            }
+        },
+        removeAll() {
+            alert('Todo list cancellata');
+            this.listItems = [];
+        }
     }
 });

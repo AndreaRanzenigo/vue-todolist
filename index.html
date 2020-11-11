@@ -19,18 +19,20 @@
         <div class="container">
             <h1>Todolist</h1>
 
-            <form>
-                <input type="text" placeholder="Inserisci il testo">
-                <button>Aggiungi</button>
-                <!-- <button>Cancella tutto</button> -->
-            </form>
+            <div class="form">
+                <input 
+                    type="text" 
+                    placeholder="Inserisci il testo"
+                    v-model="newTodo"
+                    @keyup.enter="addItems"
+                    >
+                <button class="add" @click="addItems">Aggiungi</button>
+                <button class="clear" @click="removeAll">Cancella tutto</button>
+            </div>
 
             <div class="todolist">
                 <ul>
-                    <!-- <li>Comprare le mele <i class="fas fa-times"></i></li>
-                    <li>Comprare la pasta <i class="fas fa-times"></i></li>
-                    <li>Comprare il pane <i class="fas fa-times"></i></li> -->
-                    <li v-for="(items, index) in listItems">{{ items }}<i @click='close' class="fas fa-times"></i></li>
+                    <li v-for="(items, index) in listItems"><h3>{{ items }}</h3><i @click='close(index)' class="fas fa-times"></i></li>
                 </ul>
             </div>
         </div>
