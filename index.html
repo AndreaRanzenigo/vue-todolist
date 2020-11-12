@@ -31,9 +31,10 @@
             </div>
 
             <div class="todolist">
-                <ul>
+                <ul v-if="listItems.length > 0">
                     <li v-for="(items, index) in listItems"><h3>{{ items }}</h3><i @click='close(index)' class="fas fa-times"></i></li>
                 </ul>
+                <h2 v-else>Lista todo vuota.</h2>
             </div>
         </div>
     </div>
